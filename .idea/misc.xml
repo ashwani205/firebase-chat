@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/sas/.gradle/caches/transforms-3/87a012cdb42a49e3c17fd77a3040bbb0/transformed/jetified-facebook-common-14.1.0/res/drawable/com_facebook_button_icon.xml" value="0.26205128205128203" />
+        <entry key="..\:/Users/sas/.gradle/caches/transforms-3/f10881394f20e45a60f953aae967d161/transformed/jetified-play-services-base-18.0.1/res/drawable/common_google_signin_btn_icon_light.xml" value="0.26205128205128203" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/drawable/message_et_shape.xml" value="0.21203703703703702" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/drawable/recieve_message_shape.xml" value="0.2101851851851852" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/drawable/send_btn_shape.xml" value="0.21203703703703702" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/drawable/sent_message_shape.xml" value="0.2101851851851852" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/layout/activity_active_chat_list.xml" value="0.25" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/layout/activity_chat.xml" value="0.25" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/layout/activity_my_notification.xml" value="0.25" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/layout/fragment_active_chat_list.xml" value="0.25" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/layout/item_active_chat_user_list.xml" value="0.264" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/layout/item_chat.xml" value="0.2359375" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/layout/item_message.xml" value="0.12708333333333333" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/layout/nav_header.xml" value="0.2359375" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/layout/notification.xml" value="0.1" />
+        <entry key="..\:/projects_backup/DBMS/FirebaseProject/app/src/main/res/menu/nav_menu.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

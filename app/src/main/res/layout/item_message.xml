@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:id="@+id/receive_text"
+        android:textSize="16sp"
+        android:background="@drawable/recieve_message_shape"
+        android:visibility="gone"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        tools:text="Hi Ashwani how are you"
+        tools:visibility="visible"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/send_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/sent_message_shape"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:layout_alignParentEnd="true"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:text="Hi Ashwani how are you"
+            tools:visibility="visible" />
+
+</RelativeLayout>
