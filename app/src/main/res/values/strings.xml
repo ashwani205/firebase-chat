@@ -21,6 +21,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="type_your_name_here">Type your name here</string>
     <string name="or_login_from">Or login from</string>
+    <string name="type_a_message">Type a message...</string>
 
     /*keytool -exportcert -alias androiddebugkey -keystore "C:\Users\sas\.android\debug.keystore" |
     "C:\Users\sas\Downloads\openssl-0.9.8e_X64\bin\openssl" sha1 -binary |

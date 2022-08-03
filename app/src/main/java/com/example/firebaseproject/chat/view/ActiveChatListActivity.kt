@@ -2,6 +2,7 @@ package com.example.firebaseproject.chat.view
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,6 +22,8 @@ class ActiveChatListActivity : AppCompatActivity() {
         mBinding = ActivityActiveChatListBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
         mBinding.progressBar.visibility = View.VISIBLE
+        supportActionBar?.title="Users"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setActiveChatListAdapter()
     }
 
@@ -51,5 +54,15 @@ class ActiveChatListActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            android.R.id.home->{
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

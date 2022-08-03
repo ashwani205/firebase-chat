@@ -25,11 +25,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-       binding.apply {
+        startActivity(Intent(this@MainActivity,ActiveChatListActivity::class.java))
+
+        binding.apply {
            toggle = ActionBarDrawerToggle(this@MainActivity,drawerLayout,R.string.open,R.string.close)
            drawerLayout.addDrawerListener(toggle)
            toggle.syncState()
-
+           supportActionBar?.title="Chat App"
            supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
            navView.setNavigationItemSelectedListener {

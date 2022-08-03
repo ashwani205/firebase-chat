@@ -3,6 +3,9 @@ package com.example.firebaseproject.chat.view
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.firebaseproject.R
 import com.example.firebaseproject.chat.adapter.MessageAdapter
@@ -26,34 +29,49 @@ class ChatActivity : AppCompatActivity() {
         senderRoom = senderUId + receiverUId
         receiverRoom = receiverUId + senderUId
         supportActionBar?.title = name
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         mRef = FirebaseDatabase.getInstance().reference
 
         val messageList = ArrayList<Message>()
         val adapter = MessageAdapter()
-        mBinding.messageRv.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+        mBinding.messageRv.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         mBinding.messageRv.adapter = adapter
         adapter.submitList(messageList)
 
         //logic for adding data to recyclerview
-        mRef.child("chats").child(senderRoom).child("message").addValueEventListener(object : ValueEventListener{
-            @SuppressLint("NotifyDataSetChanged")
-            override fun onDataChange(snapshot: DataSnapshot) {
-                messageList.clear()
-                snapshot.children.forEach { dataSnapshot ->
-                    val  message = dataSnapshot.getValue(Message::class.java)
-                    message?.let { messageList.add(it) }
+        mRef.child("chats").child(senderRoom).child("message")
+            .addValueEventListener(object : ValueEventListener {
+                @SuppressLint("NotifyDataSetChanged")
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    messageList.clear()
+                    snapshot.children.forEach { dataSnapshot ->
+                        val message = dataSnapshot.getValue(Message::class.java)
+                        message?.let { messageList.add(it) }
+                    }
+                    adapter.notifyDataSetChanged()
+
+                    if (messageList.size > 0) {
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            mBinding.nestedScroll.smoothScrollTo(
+                                0,
+                                mBinding.messageRv.measuredHeight
+                            )
+
+                        }, 0)
+                        // mBinding.messageRv.smoothScrollToPosition(messageList.size - 1)
+                    }
+
                 }
-                adapter.notifyDataSetChanged()
-            }
 
-            override fun onCancelled(error: DatabaseError) {
+                override fun onCancelled(error: DatabaseError) {
 
-            }
+                }
 
-        })
+            })
 
         mBinding.sendBtn.setOnClickListener {
-            if(mBinding.messageEt.text?.isNotEmpty() == true) {
+            if (mBinding.messageEt.text?.isNotEmpty() == true) {
                 val message = Message(mBinding.messageEt.text.toString(), senderUId)
                 mRef.child("chats").child(senderRoom).child("message").push()
                     .setValue(message).addOnSuccessListener {
@@ -63,5 +81,15 @@ class ChatActivity : AppCompatActivity() {
                 mBinding.messageEt.setText("")
             }
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
